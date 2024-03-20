@@ -31,26 +31,11 @@ AGalaga_USFX_L01GameMode::AGalaga_USFX_L01GameMode()
 void AGalaga_USFX_L01GameMode::BeginPlay()
 {
 	Super::BeginPlay();
-
+	FVector UbicacionNaveEnemiga = FVector(0.0f, 1000.0f, 200.0f);
 	FVector ubicacionInicioNavesEnemigasCaza = FVector(-500.0f, 500.0f, 200.0f);
 	FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 200.0f);
 	FVector ubicacionInicioNAvesEnemigasReabastecimiento = FVector(1000.0f, 500.0f, 200.0f);
 
-	FVector ubicacionNave01 = FVector(0.0f, 1000.0f, 200.0f);
-	FVector ubicacionNave02 = FVector(0.0f, 700.0f, 200.05f);
-	FVector ubicacionNave03 = FVector(0.0f, 400.0f, 200.0f);
-	FVector ubicacionNave04 = FVector(0.0f, 100.0f, 200.05f);
-	FVector ubicacionNave05 = FVector(0.0f, -200.0f, 200.0f);
-	FVector ubicacionNave06 = FVector(-250.0f, 700.0f, 200.05f);
-	FVector ubicacionNave07 = FVector(-500.0f, 700.0f, 200.0f);
-	FVector ubicacionNave08 = FVector(-250.0f, 1000.0f, 200.05f);
-	FVector ubicacionNave09 = FVector(-500.0f, 1000.0f, 200.0f);
-	FVector ubicacionNave10 = FVector(-250.0f, 400.0f, 200.05f);
-	FVector ubicacionNave11 = FVector(-500.0f, 400.0f, 200.0f);
-	FVector ubicacionNave12 = FVector(-250.0f, 100.0f, 200.05f);
-	FVector ubicacionNave13 = FVector(-500.0f, 100.0f, 200.0f);
-	FVector ubicacionNave14 = FVector(-250.0f, -200.0f, 200.05f);
-	FVector ubicacionNave15 = FVector(-500.0f, -200.0f, 200.0f);
 
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
@@ -61,57 +46,70 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 	{
 		//es clave declarar los contenedores con la clase abstracta para que cuando queramos almacenar los
 		//objetos, puedan ser de todos los tipos siguiendo el arbol de erencia
-
-		//for (int i = 0; i < 5; i++)
+		/*for (int k = 0; k < 30; k++)
 		{
-			//FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + i * 300, ubicacionInicioNavesEnemigasCaza.Z);
-			//AMyNaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<AMyNaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
-			//TANavesEnemigas.Push(NaveEnemigaCazaTemporal);
+            FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + k * 300, ubicacionInicioNavesEnemigasCaza.Z);
+			AMyNaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<AMyNaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
+			TANavesEnemigasCaza.Push(NaveEnemigaCazaTemporal);
+		}*/
+
+		/*for (int i = 0; i < 5; i++)*/
+		{
+			/*FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + i * 300, ubicacionInicioNavesEnemigasCaza.Z);
+			AMyNaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<AMyNaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
+			TANavesEnemigas.Push(NaveEnemigaCazaTemporal);*/
 
 		}
 
-		float nevaaposicionX = ubicacionInicioNavesEnemigasTransporte.X - 300.0f;
+	/*	float nevaaposicionX = ubicacionInicioNavesEnemigasTransporte.X - 300.0f;*/
 
-		//for (int j = 0; j < 5; j++)
+		/*for (int j = 0; j < 5; j++)*/
 		{
 			//FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + j * 300, ubicacionInicioNavesEnemigasCaza.Z);
 			//AMyNaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<AMyNaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
-
-				//TANavesEnemigasCaza.Push(NaveEnemigaCazaTemporal);
+            //TANavesEnemigasCaza.Push(NaveEnemigaCazaTemporal);
 		}
+		//esto es para el spawn local con ubicacion actual
+		/*NaveEnemigaTransporte01 = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionNave01, rotacionNave);*/
+			{
+			// Array de clases de naves enemigas
+			TArray<TSubclassOf<ANaveEnemiga>> claseNave = { AMyNaveEnemigaCazaG1::StaticClass(), AMyNaveEnemigaCazaG2::StaticClass(),ANaveEnemigaEspiaG1::StaticClass(),ANaveEnemigaEspiaG2::StaticClass(),
+				ANaveEnemigaNodrizaG1::StaticClass(),ANaveEnemigaNodrizaG2::StaticClass(),ANaveEnemigaReabastecimientoG1::StaticClass(),ANaveEnemigaReabastecimientoG2::StaticClass(),
+				ANaveEnemigaTransporteG1::StaticClass(),ANaveEnemigaTransporteG2::StaticClass()};
 
-		NaveEnemigaTransporte01 = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionNave01, rotacionNave); 
-		MyNaveEnemigaCaza01 = World->SpawnActor<AMyNaveEnemigaCaza>(ubicacionNave02, rotacionNave);
-		NaveEnemigaEspia01 = World->SpawnActor<ANaveEnemigaEspia>(ubicacionNave03, rotacionNave);
-		NaveEnemigaNodriza01 = World->SpawnActor<ANaveEnemigaNodriza>(ubicacionNave04, rotacionNave);
-		NaveEnemigaReabastecimiento01 = World->SpawnActor<ANaveEnemigaReabastecimiento>(ubicacionNave05, rotacionNave);
-		MyNaveEnemigaCazaG101 = World->SpawnActor<AMyNaveEnemigaCazaG1>(ubicacionNave06, rotacionNave);
-		MyNaveEnemigaCazaG201 = World->SpawnActor<AMyNaveEnemigaCazaG2>(ubicacionNave07, rotacionNave);
-		NaveEnemigaTransporteG101 = World->SpawnActor<ANaveEnemigaTransporteG1>(ubicacionNave08, rotacionNave);
-		NaveEnemigaTransporteG201 = World->SpawnActor<ANaveEnemigaTransporteG2>(ubicacionNave09, rotacionNave);
-		NaveEnemigaEspiaG101 = World->SpawnActor<ANaveEnemigaEspiaG1>(ubicacionNave10, rotacionNave);
-		NaveEnemigaEspiaG201 = World->SpawnActor<ANaveEnemigaEspiaG2>(ubicacionNave11, rotacionNave);
-		NaveEnemigaNodrizaG101 = World->SpawnActor<ANaveEnemigaNodrizaG1>(ubicacionNave12, rotacionNave);
-		NaveEnemigaNodrizaG201 = World->SpawnActor<ANaveEnemigaNodrizaG2>(ubicacionNave13, rotacionNave);
-		NaveEnemigaReabastecimientoG101 = World->SpawnActor<ANaveEnemigaReabastecimientoG1>(ubicacionNave14, rotacionNave);
-		NaveEnemigaReabastecimientoG201 = World->SpawnActor<ANaveEnemigaReabastecimientoG2>(ubicacionNave15, rotacionNave);
+			// Punto inicial de spawn
+			FVector InicialSpawnLocation = FVector(80.f, -500.f, 200.f);
+
+			// Genera 30 naves enemigas
+			for (int i = 0; i < 30; ++i)
+			{
+				// Seleccion aleatoria
+				TSubclassOf<ANaveEnemiga> ClaseRandom = claseNave[FMath::RandRange(0, claseNave.Num() - 1)];
+
+				// pocision adicional de spawn
+				FVector SpawnLocation = InicialSpawnLocation + FVector( 0.f,i * 50.f, 0.f); // Aumenta en 300 unidades en la dirección X
+
+				// spawn con rotacion 0 y todo lo demas
+				FRotator SpawnRotation = FRotator::ZeroRotator; 
+				ANaveEnemiga* NuevaNaveSpawn = GetWorld()->SpawnActor<ANaveEnemiga>(ClaseRandom, SpawnLocation, SpawnRotation);
+
+				// vemos si funca
+				if (NuevaNaveSpawn)
+				{
+					// Asigna valores aleatorios a otros atributos de la nave enemiga
+					//NuevaNaveSpawn->SetResistencia(FMath::RandRange(1.f, 100.f));
+					//NuevaNaveSpawn->SetVelocidad(FMath::RandRange(1.f, 100.f));
+					//NuevaNaveSpawn->SetDanoProducido(FMath::RandRange(1.f, 100.f));
+					//NuevaNaveSpawn->SetNombre(FString::Printf(TEXT("NaveEnemiga %d"), i));
+					//NuevaNaveSpawn->SetTiempoDisparo(FMath::RandRange(1.f, 100.f));
+				}
+			}
+		}
+	
 	}
 
-	MyNaveEnemigaCaza01->SetPosicion(FVector(-500.0f, 500.0f, 200.0f));
-	NaveEnemigaTransporte01->SetPosicion(FVector(500.0f, 500.0f, 200.0f));
-	NaveEnemigaEspia01->SetPosicion(FVector(0.0f, 500.0f, 200.0f));
-	NaveEnemigaNodriza01->SetPosicion(FVector(1000.0f, 0.0f, 130.0f));
-	NaveEnemigaReabastecimiento01->SetPosicion(FVector(3000.0f, 100.0f, 500.0f));
-	MyNaveEnemigaCazaG101->SetPosicion(FVector(200.0f, 0.0f, 200.0f));
-	MyNaveEnemigaCazaG201->SetPosicion(FVector(600.0f, 250.0f, 200.0f));
-	NaveEnemigaTransporteG101->SetPosicion(FVector(200.0f, 0.0f, 200.0f));
-	NaveEnemigaTransporteG201->SetPosicion(FVector(600.0f, 250.0f, 200.0f));
-	NaveEnemigaEspiaG101->SetPosicion(FVector(200.0f, 0.0f, 200.0f));
-	NaveEnemigaEspiaG201->SetPosicion(FVector(600.0f, 250.0f, 200.0f));
-	NaveEnemigaNodrizaG101->SetPosicion(FVector(200.0f, 0.0f, 200.0f));
-	NaveEnemigaNodrizaG201->SetPosicion(FVector(600.0f, 250.0f, 200.0f));
-	NaveEnemigaReabastecimientoG101->SetPosicion(FVector(200.0f, 0.0f, 200.0f));
-	NaveEnemigaReabastecimientoG201->SetPosicion(FVector(600.0f, 250.0f, 200.0f));
+	//MyNaveEnemigaCaza01->SetPosicion(FVector(-500.0f, 500.0f, 200.0f));
+
 
 }
 

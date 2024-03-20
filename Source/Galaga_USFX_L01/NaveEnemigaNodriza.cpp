@@ -12,13 +12,29 @@ ANaveEnemigaNodriza::ANaveEnemigaNodriza()
 
 void ANaveEnemigaNodriza::Mover(float DeltaTime)
 {
-	FVector PosicionActual = GetActorLocation();
+	static FVector PosicionInicial = GetActorLocation();
+	static float LimiteInferior = PosicionInicial.X - 700.0f;
+	static float LimiteSuperior = PosicionInicial.X + 80.0f;
+	static float Limitederecho = PosicionInicial.Y + 1300.0f;
+	static float LimiteIzquierdo = PosicionInicial.Y - 250.0f;
+	static float movimientoY = 100.0f;
+	FVector Desplazamiento = FVector(-100.0f * DeltaTime, movimientoY * DeltaTime, FMath::RandRange(-500.0f, 500.0f) * DeltaTime);
 
-	float NuevaX = FMath::RandRange(-500.0f, 500.0f) * (DeltaTime / 500.0f);
-	float NuevaY = FMath::RandRange(-500.0f, 500.0f) * (DeltaTime / 500.0f);
-	float NuevaZ = FMath::RandRange(-500.0f, 500.0f) * DeltaTime;
+	FVector NuevaPosicion = GetActorLocation() + Desplazamiento;
 
-	FVector NuevaPosicion = FVector(PosicionActual.X + NuevaX, PosicionActual.Y + NuevaY, PosicionActual.Z + NuevaZ);
+	if (NuevaPosicion.X < LimiteInferior)
+	{
+		NuevaPosicion.X = LimiteSuperior;
+	}
+	else if (NuevaPosicion.X > LimiteSuperior)
+	{
+		NuevaPosicion.X = LimiteInferior;
+	}
+	if (NuevaPosicion.Y < LimiteIzquierdo || NuevaPosicion.Y >  Limitederecho)
+	{
+		movimientoY *= -1.0f;
+	}
+
 
 	SetActorLocation(NuevaPosicion);
 }

@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeMyNaveEnemigaCazaG1() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyNaveEnemigaCazaG1_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "MyNaveEnemigaCazaG1.h" },
 		{ "ModuleRelativePath", "MyNaveEnemigaCazaG1.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeMyNaveEnemigaCazaG1() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMyNaveEnemigaCazaG1, 923869066);
+	IMPLEMENT_CLASS(AMyNaveEnemigaCazaG1, 200815796);
 	template<> GALAGA_USFX_L01_API UClass* StaticClass<AMyNaveEnemigaCazaG1>()
 	{
 		return AMyNaveEnemigaCazaG1::StaticClass();

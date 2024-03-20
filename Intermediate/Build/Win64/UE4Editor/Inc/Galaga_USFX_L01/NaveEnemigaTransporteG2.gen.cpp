@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaTransporteG2() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaTransporteG2_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "NaveEnemigaTransporteG2.h" },
 		{ "ModuleRelativePath", "NaveEnemigaTransporteG2.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaTransporteG2() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaTransporteG2, 329294060);
+	IMPLEMENT_CLASS(ANaveEnemigaTransporteG2, 2019616460);
 	template<> GALAGA_USFX_L01_API UClass* StaticClass<ANaveEnemigaTransporteG2>()
 	{
 		return ANaveEnemigaTransporteG2::StaticClass();

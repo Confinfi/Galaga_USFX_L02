@@ -5,7 +5,7 @@
 
 AMyNaveEnemigaCazaG1::AMyNaveEnemigaCazaG1()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule'"));
 
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 
