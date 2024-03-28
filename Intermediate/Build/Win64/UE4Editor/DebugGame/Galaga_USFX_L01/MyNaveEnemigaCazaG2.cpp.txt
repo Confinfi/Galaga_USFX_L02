@@ -1,0 +1,7 @@
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Definitions.Galaga_USFX_L01.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\MyNaveEnemigaCazaG2.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\MyNaveEnemigaCaza.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemiga.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemiga.generated.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\MyNaveEnemigaCaza.generated.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\MyNaveEnemigaCazaG2.generated.h

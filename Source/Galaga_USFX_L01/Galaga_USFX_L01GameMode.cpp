@@ -27,93 +27,125 @@ AGalaga_USFX_L01GameMode::AGalaga_USFX_L01GameMode()
 
 
 }
+FVector InicialSpawnLocation = FVector(80.f, -500.f, 200.f);
+
+FTimerHandle TimerHandle_MostrarMensajes;
+FTimerHandle TimerHandle_EliminarNaves;
+FTimerHandle TimerHandle_AgregarNaves;
+
+TArray<TSubclassOf<ANaveEnemiga>> claseNave = { AMyNaveEnemigaCazaG1::StaticClass(), AMyNaveEnemigaCazaG2::StaticClass(), ANaveEnemigaEspiaG1::StaticClass(), ANaveEnemigaEspiaG2::StaticClass(),
+    ANaveEnemigaNodrizaG1::StaticClass(), ANaveEnemigaNodrizaG2::StaticClass(), ANaveEnemigaReabastecimientoG1::StaticClass(), ANaveEnemigaReabastecimientoG2::StaticClass(),
+    ANaveEnemigaTransporteG1::StaticClass(), ANaveEnemigaTransporteG2::StaticClass() };
 
 void AGalaga_USFX_L01GameMode::BeginPlay()
 {
-	Super::BeginPlay();
-	FVector UbicacionNaveEnemiga = FVector(0.0f, 1000.0f, 200.0f);
-	FVector ubicacionInicioNavesEnemigasCaza = FVector(-500.0f, 500.0f, 200.0f);
-	FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 200.0f);
-	FVector ubicacionInicioNAvesEnemigasReabastecimiento = FVector(1000.0f, 500.0f, 200.0f);
+    Super::BeginPlay();
+    FVector ubicacionInicioNAvesEnemigasReabastecimiento = FVector(1000.0f, 500.0f, 200.0f);
 
+// Verifica si el mundo es válido antes de continuar
+    if (GetWorld() != nullptr)
+    {
+        // Genera 30 naves enemigas.
+        for (int i = 0; i < 30; ++i)
+        {
+            // Selecciona aleatoriamente una clase de nave enemiga de la TArray.
+            TSubclassOf<ANaveEnemiga> ClaseRandom = claseNave[FMath::RandRange(0, claseNave.Num() - 1)];
 
-	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
+            // Calcula la posición de spawn de la nave en función de la posición inicial y un incremento en la dirección Y.
+            FVector SpawnLocation = InicialSpawnLocation + FVector(0.f, i * 50.f, 0.f);
 
-	UWorld* const World = GetWorld();
-	if (World != nullptr)
+            // Define la rotación de spawn como cero.
+            FRotator SpawnRotation = FRotator::ZeroRotator;
 
+            // Genera una nueva instancia de la nave enemiga en el mundo.
+            ANaveEnemiga* NuevaNaveSpawn = GetWorld()->SpawnActor<ANaveEnemiga>(ClaseRandom, SpawnLocation, SpawnRotation);
 
-	{
-		//es clave declarar los contenedores con la clase abstracta para que cuando queramos almacenar los
-		//objetos, puedan ser de todos los tipos siguiendo el arbol de erencia
-		/*for (int k = 0; k < 30; k++)
-		{
-            FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + k * 300, ubicacionInicioNavesEnemigasCaza.Z);
-			AMyNaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<AMyNaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
-			TANavesEnemigasCaza.Push(NaveEnemigaCazaTemporal);
-		}*/
+            // Verifica si la nave se ha generado correctamente.
+            if (NuevaNaveSpawn)
+            {
+                // Obtiene el nombre de la clase de la nave enemiga.
+                FString NombreNave = ClaseRandom->GetDefaultObject<ANaveEnemiga>()->GetName();
 
-		/*for (int i = 0; i < 5; i++)*/
-		{
-			/*FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + i * 300, ubicacionInicioNavesEnemigasCaza.Z);
-			AMyNaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<AMyNaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
-			TANavesEnemigas.Push(NaveEnemigaCazaTemporal);*/
+                // Esto es para eliminar "Default_" del nombre de la nave.
+                if (NombreNave.StartsWith("Default_"))
+                {
+                    NombreNave = NombreNave.RightChop(8);
+                }
 
-		}
+                TMPosicionesNavesEnemigas.Add(NombreNave, SpawnLocation);
+                // Esto es para mostrar en pantalla
+                FString Mensaje = FString::Printf(TEXT("Nombre de la Nave: %s, Ubicación: %s"), *NombreNave, *SpawnLocation.ToString());
+                GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, Mensaje);
+            }
+        }
+        // Programa la función para mostrar el mensaje en pantalla cada 15 segundos durante los primeros 45 segundos del juego
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle_MostrarMensajes, this, &AGalaga_USFX_L01GameMode::MostrarMensajesEnPantalla, 15.0f, true, 0.0f);
+        // Programa el temporizador para eliminar y agregar naves cada 10 segundos
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle_EliminarNaves, this, &AGalaga_USFX_L01GameMode::EliminarNaves, 10.0f, true, 0.0f);
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle_AgregarNaves, this, &AGalaga_USFX_L01GameMode::CrearNaves, 10.0f, true, 5.0f); // Agrega naves después de 5 segundos del inicio
 
-	/*	float nevaaposicionX = ubicacionInicioNavesEnemigasTransporte.X - 300.0f;*/
-
-		/*for (int j = 0; j < 5; j++)*/
-		{
-			//FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + j * 300, ubicacionInicioNavesEnemigasCaza.Z);
-			//AMyNaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<AMyNaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
-            //TANavesEnemigasCaza.Push(NaveEnemigaCazaTemporal);
-		}
-		//esto es para el spawn local con ubicacion actual
-		/*NaveEnemigaTransporte01 = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionNave01, rotacionNave);*/
-			{
-			// Array de clases de naves enemigas
-			TArray<TSubclassOf<ANaveEnemiga>> claseNave = { AMyNaveEnemigaCazaG1::StaticClass(), AMyNaveEnemigaCazaG2::StaticClass(),ANaveEnemigaEspiaG1::StaticClass(),ANaveEnemigaEspiaG2::StaticClass(),
-				ANaveEnemigaNodrizaG1::StaticClass(),ANaveEnemigaNodrizaG2::StaticClass(),ANaveEnemigaReabastecimientoG1::StaticClass(),ANaveEnemigaReabastecimientoG2::StaticClass(),
-				ANaveEnemigaTransporteG1::StaticClass(),ANaveEnemigaTransporteG2::StaticClass()};
-
-			// Punto inicial de spawn
-			FVector InicialSpawnLocation = FVector(80.f, -500.f, 200.f);
-
-			// Genera 30 naves enemigas
-			for (int i = 0; i < 30; ++i)
-			{
-				// Seleccion aleatoria
-				TSubclassOf<ANaveEnemiga> ClaseRandom = claseNave[FMath::RandRange(0, claseNave.Num() - 1)];
-
-				// pocision adicional de spawn
-				FVector SpawnLocation = InicialSpawnLocation + FVector( 0.f,i * 50.f, 0.f); // Aumenta en 300 unidades en la dirección X
-
-				// spawn con rotacion 0 y todo lo demas
-				FRotator SpawnRotation = FRotator::ZeroRotator; 
-				ANaveEnemiga* NuevaNaveSpawn = GetWorld()->SpawnActor<ANaveEnemiga>(ClaseRandom, SpawnLocation, SpawnRotation);
-
-				// vemos si funca
-				if (NuevaNaveSpawn)
-				{
-					// Asigna valores aleatorios a otros atributos de la nave enemiga
-					//NuevaNaveSpawn->SetResistencia(FMath::RandRange(1.f, 100.f));
-					//NuevaNaveSpawn->SetVelocidad(FMath::RandRange(1.f, 100.f));
-					//NuevaNaveSpawn->SetDanoProducido(FMath::RandRange(1.f, 100.f));
-					//NuevaNaveSpawn->SetNombre(FString::Printf(TEXT("NaveEnemiga %d"), i));
-					//NuevaNaveSpawn->SetTiempoDisparo(FMath::RandRange(1.f, 100.f));
-				}
-			}
-		}
-	
-	}
-
-	//MyNaveEnemigaCaza01->SetPosicion(FVector(-500.0f, 500.0f, 200.0f));
-
-
+    }
 }
+void AGalaga_USFX_L01GameMode::MostrarMensajesEnPantalla()
+    {
+        // Verifica si ya han pasado los 45 segundos
+        if (GetWorld()->GetTimeSeconds() >= 45.0f)
+        {
+            // Detén el temporizador
+            GetWorld()->GetTimerManager().ClearTimer(TimerHandle_MostrarMensajes);
+            return;
+        }
 
+        // Lógica para obtener el nombre y la posición de cada nave enemiga
+        for (const auto& Element : TMPosicionesNavesEnemigas)
+        {
+            FString NombreNave = Element.Key;
+            FVector UbicacionNave = Element.Value;
+
+            // Muestra el nombre y la ubicación de la nave enemiga en pantalla
+            FString Mensaje = FString::Printf(TEXT("Nombre de la Nave: %s, Ubicación: %s"), *NombreNave, *UbicacionNave.ToString());
+            GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, Mensaje);
+        }
+    }  
+void AGalaga_USFX_L01GameMode::EliminarNaves()
+    {
+        // Elimina 2 naves aleatorias
+        for (int i = 0; i < 2; ++i)
+        {
+            if (TMPosicionesNavesEnemigas.Num() > 0)
+            {
+                int32 RandomIndex = FMath::RandRange(0, TMPosicionesNavesEnemigas.Num() - 1);
+                auto Iterator = TMPosicionesNavesEnemigas.CreateIterator();
+                for (int j = 0; j < RandomIndex; ++j)
+                {
+                    ++Iterator;
+                }
+                Iterator.RemoveCurrent();
+            }
+        }
+	}
+void AGalaga_USFX_L01GameMode::CrearNaves()
+	{
+        for (int i = 0; i < 3; ++i)
+        {
+            TSubclassOf<ANaveEnemiga> ClaseRandom = claseNave[FMath::RandRange(0, claseNave.Num() - 1)];
+            FVector SpawnLocation = InicialSpawnLocation + FVector(0.f, (TMPosicionesNavesEnemigas.Num() + i) * 50.f, 0.f);
+            FRotator SpawnRotation = FRotator::ZeroRotator;
+            ANaveEnemiga* NuevaNaveSpawn = GetWorld()->SpawnActor<ANaveEnemiga>(ClaseRandom, SpawnLocation, SpawnRotation);
+            if (NuevaNaveSpawn)
+            {
+                FString NombreNave = ClaseRandom->GetDefaultObject<ANaveEnemiga>()->GetName();
+                if (NombreNave.StartsWith("Default_"))
+                {
+                    NombreNave = NombreNave.RightChop(8);
+                }
+                TMPosicionesNavesEnemigas.Add(NombreNave, SpawnLocation);
+                FString Mensaje = FString::Printf(TEXT("Nombre de la Nave: %s, Ubicación: %s"), *NombreNave, *SpawnLocation.ToString());
+                GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, Mensaje);
+            }
+        }
+    }
 void AGalaga_USFX_L01GameMode::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+    Super::Tick(DeltaTime);
 }

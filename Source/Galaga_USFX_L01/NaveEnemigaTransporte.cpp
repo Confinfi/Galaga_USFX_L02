@@ -45,6 +45,12 @@ void ANaveEnemigaTransporte::Mover(float DeltaTime)
 	{
 		movimientoY *= -1.0f;
 	}
+	//probar si se puede mover cierta cantidad y no en el mapa 
+
+	//if (movimientoY = movimientoY + 200.0f)
+	//{
+	//	movimientoY *= -1.0f;
+	//}
 
 
 	SetActorLocation(NuevaPosicion);

@@ -1,0 +1,2 @@
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Definitions.Galaga_USFX_L01.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\Galaga_USFX_L01.h
