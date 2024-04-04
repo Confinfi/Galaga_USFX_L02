@@ -14,7 +14,9 @@ class GALAGA_USFX_L01_API ANaveEnemiga : public AActor
 public:	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* mallaNaveEnemiga;
+	
 
+	
 protected:
 	float resistencia; //Numero de disparos que puede recibir antes de ser destruido
 	float velocidad;
@@ -34,35 +36,7 @@ protected:
 
 
 public:
-	FORCEINLINE float GetResistencia() const { return resistencia; }
-	FORCEINLINE float GetVelocidad() const { return velocidad; }
-	FORCEINLINE float GetDanoProducido() const { return danoProducido; }
-	FORCEINLINE FString GetNombre() const { return nombre; }
-	FORCEINLINE float GetTiempoDisparo() const { return tiempoDisparo; }
-	FORCEINLINE FVector Getposicion() const { return posicion; }
-	FORCEINLINE int GetTrayectoria() const { return trayectoria; }
-	FORCEINLINE int GetCapacidadPasajeros() const { return capacidadPasajeros; }
-	FORCEINLINE int GetCapacidadMunicion() const { return capacidadMunicion; }
-	FORCEINLINE int GetTipoNave() const { return tipoNave; }
-	FORCEINLINE float GetExperiencia() const { return experiencia; }
-	FORCEINLINE float GetEnergia() const { return energia; }
-	FORCEINLINE float GetPeso() const { return peso; }
-	FORCEINLINE float GetVolumen() const { return volumen; }
-
-	FORCEINLINE void SetResistencia(float _resistencia) { resistencia = _resistencia; }
-	FORCEINLINE void SetVelocidad(float _velocidad) { velocidad = _velocidad; }
-	FORCEINLINE void SetDanoProducido(float _danoProducido) { danoProducido = _danoProducido; }
-	FORCEINLINE void SetNombre(FString _nombre) { nombre = _nombre; }
-	FORCEINLINE void SetTiempoDisparo(float _tiempoDisparo) { tiempoDisparo = _tiempoDisparo; }
-	FORCEINLINE void SetPosicion(FVector _posicion) { posicion = _posicion; }
-	FORCEINLINE void SetTrayectoria(int _trayectoria) { trayectoria = _trayectoria; }
-	FORCEINLINE void SetCapacidadPasajeros(int _capacidadPasajeros) { capacidadPasajeros = _capacidadPasajeros; }
-	FORCEINLINE void SetCapacidadMunicion(int _capacidadMunicion) { capacidadMunicion = _capacidadMunicion; }
-	FORCEINLINE void SetTipoNave(int _tipoNave) { tipoNave = _tipoNave; }
-	FORCEINLINE void SetExperiencia(float _experiencia) { experiencia = _experiencia; }
-	FORCEINLINE void SetEnergia(float _energia) { energia = _energia; }
-	FORCEINLINE void SetPeso(float _peso) { peso = _peso; }
-	FORCEINLINE void SetVolumen(float _volumen) { volumen = _volumen; }
+	
 
 public:
 	// Sets default values for this actor's properties
@@ -82,5 +56,8 @@ protected:
 	void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
 	void Destruirse() PURE_VIRTUAL(ANaveEnemiga::Destruirse, );
 	void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
+	/*void AlternarVisibilidad();*/
+	void ActualizarInvisibilidad();
+	FTimerHandle Timerhandle_Visibilidad;
 };
  

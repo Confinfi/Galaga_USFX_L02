@@ -46,6 +46,6 @@ public:
 	void MostrarMensajesEnPantalla();
 	void EliminarNaves();
 	void CrearNaves();
-
+	//void ActualizarInvisibilidadNaves();
 	
 };
