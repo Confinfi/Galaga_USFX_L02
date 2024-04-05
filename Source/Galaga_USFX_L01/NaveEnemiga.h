@@ -4,19 +4,25 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "ComponenteDeInvisibilidad.h"
 #include "NaveEnemiga.generated.h"
 
 UCLASS(abstract)
 class GALAGA_USFX_L01_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()
-	
+
 public:	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* mallaNaveEnemiga;
 	
+	//UPROPERTY(VisibleAnywhere)
+	//UComponenteDeInvisibilidad* ComponenteInvisibilidad;
 
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Componentes")
+	//UComponenteDeInvisibilidad* ComponenteDeInvisibilidad;
 	
+
 protected:
 	float resistencia; //Numero de disparos que puede recibir antes de ser destruido
 	float velocidad;
@@ -36,9 +42,6 @@ protected:
 
 
 public:
-	
-
-public:
 	// Sets default values for this actor's properties
 	ANaveEnemiga();
 
@@ -56,8 +59,9 @@ protected:
 	void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
 	void Destruirse() PURE_VIRTUAL(ANaveEnemiga::Destruirse, );
 	void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
-	/*void AlternarVisibilidad();*/
-	void ActualizarInvisibilidad();
+	//Pruebas
+	//void AlternarVisibilidad();
+	//void ActualizarInvisibilidad();
 	FTimerHandle Timerhandle_Visibilidad;
 };
  

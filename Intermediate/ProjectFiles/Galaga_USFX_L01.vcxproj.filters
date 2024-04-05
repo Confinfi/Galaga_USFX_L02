@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_L01.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{BCDA1BBF-2B2C-4B0F-B3F3-EA2B72496FB9}</UniqueIdentifier>
+      <UniqueIdentifier>{5818D265-2624-43EA-A77D-647DBE7261C4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_L01.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{8C8129D2-D370-4869-899B-D317082F3700}</UniqueIdentifier>
+      <UniqueIdentifier>{18CFFFF7-C2AE-4E10-9B03-CB687B8AD04E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,8 +32,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_L01">
-      <UniqueIdentifier>{425A6A73-2819-4F98-9714-5C78F1E08475}</UniqueIdentifier>
+      <UniqueIdentifier>{4BBCB7F7-8B49-4EE1-AD14-4BDA06394B54}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L01\ComponenteDeInvisibilidad.cpp">
+      <Filter>Source\Galaga_USFX_L01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L01\ComponenteDeInvisibilidad.h">
+      <Filter>Source\Galaga_USFX_L01</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L01\Escenario.cpp">
       <Filter>Source\Galaga_USFX_L01</Filter>
     </ClCompile>

@@ -4,6 +4,7 @@
 #include "NaveEnemiga.h"
 #include "Galaga_USFX_L01GameMode.h"
 
+
 // Sets default values
 ANaveEnemiga::ANaveEnemiga()
 {
@@ -23,29 +24,38 @@ void ANaveEnemiga::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GetWorldTimerManager().SetTimer(Timerhandle_Visibilidad, this, &ANaveEnemiga::ActualizarInvisibilidad, 5.0f, true);
+	// Obtener el componente de malla de la nave enemiga
+	/*mallaNaveEnemiga = Cast<UStaticMeshComponent>(GetComponentByClass(UStaticMeshComponent::StaticClass()));
+	if (!mallaNaveEnemiga)
+	{
+		UE_LOG(LogTemp, Error, TEXT("No se pudo encontrar el componente de malla de la nave enemiga."));
+		return;
+	}*/
+
+
+	//GetWorldTimerManager().SetTimer(Timerhandle_Visibilidad, this, &ANaveEnemiga::ActualizarInvisibilidad, 5.0f, true);
 }
 
-void ANaveEnemiga::ActualizarInvisibilidad()
-{
-    // Obtener el game mode
-    AGalaga_USFX_L01GameMode* GameMode = Cast<AGalaga_USFX_L01GameMode>(GetWorld()->GetAuthGameMode());
-    if (GameMode)
-    {
-        // Decide aleatoriamente si esta nave debe ser invisible
-        bool DebeSerInvisible = FMath::RandBool();
-
-        // Si se decide que la nave debe ser invisible, oculta su malla
-        if (DebeSerInvisible)
-        {
-            mallaNaveEnemiga->SetVisibility(false);
-        }
-        else
-        {
-            mallaNaveEnemiga->SetVisibility(true);
-        }
-    }
-}
+//void ANaveEnemiga::ActualizarInvisibilidad()
+//{
+//    // Obtener el game mode
+//    AGalaga_USFX_L01GameMode* GameMode = Cast<AGalaga_USFX_L01GameMode>(GetWorld()->GetAuthGameMode());
+//    if (GameMode)
+//    {
+//        // Decide aleatoriamente si esta nave debe ser invisible
+//        bool DebeSerInvisible = FMath::RandBool();
+//
+//        // Si se decide que la nave debe ser invisible, oculta su malla
+//        if (DebeSerInvisible)
+//        {
+//            mallaNaveEnemiga->SetVisibility(false);
+//        }
+//        else
+//        {
+//            mallaNaveEnemiga->SetVisibility(true);
+//        }
+//    }
+//}
 // Called every frame
 void ANaveEnemiga::Tick(float DeltaTime)
 {
