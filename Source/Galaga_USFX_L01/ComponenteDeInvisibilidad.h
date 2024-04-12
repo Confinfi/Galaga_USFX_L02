@@ -12,8 +12,9 @@ class GALAGA_USFX_L01_API UComponenteDeInvisibilidad : public UActorComponent
 
     GENERATED_BODY()
 
+
 public:
-    UStaticMeshComponent* mallaNaveEnemiga;
+ /*   UStaticMeshComponent* mallaNaveEnemiga;*/
     UComponenteDeInvisibilidad();
 
 protected:
@@ -23,5 +24,6 @@ public:
     virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
     void CambiarVisibilidad();
     FTimerHandle TimerHandle_Visibilidad;
-
+private:
+    AActor* NaveEnemiga;
 };

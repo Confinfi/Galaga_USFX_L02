@@ -6,19 +6,24 @@
 
 UComponenteDeInvisibilidad::UComponenteDeInvisibilidad()
 {
-    //Permiso para que el componente se actualice cada frame 
-    //PrimaryComponentTick.bCanEverTick = true;
+    SetComponentTickEnabled(false);
 }
 
 void UComponenteDeInvisibilidad::BeginPlay()
 {
     Super::BeginPlay();
 
-    // Obtener la malla de la nave enemiga
-    mallaNaveEnemiga = Cast<UStaticMeshComponent>(GetOwner()->GetComponentByClass(UStaticMeshComponent::StaticClass()));
+    //Vemos en que actor se usara el componente 
+    NaveEnemiga = GetOwner();
+    if (!NaveEnemiga)
+    {
+        UE_LOG(LogTemp, Error, TEXT("UComponenteDeInvisibilidad: No se pudo obtener el actor asociado."));
+        return;
+    }
 
-    // Temporizador para cambiar la visibilidad cada 5 segundos
+    // Temporizador cada 5 segundos
     GetWorld()->GetTimerManager().SetTimer(TimerHandle_Visibilidad, this, &UComponenteDeInvisibilidad::CambiarVisibilidad, 5.0f, true);
+
 }
 
 void UComponenteDeInvisibilidad::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -28,11 +33,15 @@ void UComponenteDeInvisibilidad::TickComponent(float DeltaTime, ELevelTick TickT
 
 void UComponenteDeInvisibilidad::CambiarVisibilidad()
 {
-    //verificacion
-    if (mallaNaveEnemiga)
+    if (NaveEnemiga)
     {
-        // Decidir aleatoriamente si la nave debe ser invisible
-        bool DebeSerInvisible = FMath::RandBool();
-        mallaNaveEnemiga->SetVisibility(!DebeSerInvisible);
+        // Genera un valor aleatorio
+        float RandomValue = FMath::FRandRange(1.f, 10.f);
+
+        // porcentaje 50%
+        bool Invisible = RandomValue > 5.0f;
+
+        // Hace invisible o visible al actor según el valor aleatorio
+        NaveEnemiga->SetActorHiddenInGame(Invisible);
     }
 }

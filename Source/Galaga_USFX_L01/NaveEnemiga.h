@@ -53,6 +53,7 @@ protected:
 	void Destruirse() PURE_VIRTUAL(ANaveEnemiga::Destruirse, );
 	void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
 	//pruebas
+
 	UComponenteDeInvisibilidad* ComponenteInvisibilidad;
 	FTimerHandle Timerhandle_Visibilidad;
 };

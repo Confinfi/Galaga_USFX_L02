@@ -18,7 +18,7 @@ ANaveEnemiga::ANaveEnemiga()
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
 
-	ComponenteInvisibilidad = CreateDefaultSubobject<UComponenteDeInvisibilidad>(TEXT("ComponenteInvisible"));
+	ComponenteInvisibilidad = CreateDefaultSubobject<UComponenteDeInvisibilidad>(TEXT("ComponenteInvisibilidad"));
 }
 
 // Called when the game starts or when spawned
@@ -26,8 +26,7 @@ void ANaveEnemiga::BeginPlay()
 {
 	Super::BeginPlay();
 
-
-	//GetWorldTimerManager().SetTimer(Timerhandle_Visibilidad, this, &ANaveEnemiga::ActualizarInvisibilidad, 5.0f, true);
+	
 }
 
 //void ANaveEnemiga::ActualizarInvisibilidad()
