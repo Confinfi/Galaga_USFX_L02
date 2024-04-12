@@ -14,6 +14,8 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\In
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\Galaga_USFX_L01Pawn.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemiga.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\ComponenteDeInvisibilidad.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\ComponenteDeInvisibilidad.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemiga.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemigaTransporte.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaTransporte.generated.h
@@ -45,3 +47,12 @@ C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemigaReabast
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaReabastecimientoG1.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemigaReabastecimientoG2.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaReabastecimientoG2.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h

@@ -17,20 +17,14 @@ ANaveEnemiga::ANaveEnemiga()
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
+
+	ComponenteInvisibilidad = CreateDefaultSubobject<UComponenteDeInvisibilidad>(TEXT("ComponenteInvisible"));
 }
 
 // Called when the game starts or when spawned
 void ANaveEnemiga::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// Obtener el componente de malla de la nave enemiga
-	/*mallaNaveEnemiga = Cast<UStaticMeshComponent>(GetComponentByClass(UStaticMeshComponent::StaticClass()));
-	if (!mallaNaveEnemiga)
-	{
-		UE_LOG(LogTemp, Error, TEXT("No se pudo encontrar el componente de malla de la nave enemiga."));
-		return;
-	}*/
 
 
 	//GetWorldTimerManager().SetTimer(Timerhandle_Visibilidad, this, &ANaveEnemiga::ActualizarInvisibilidad, 5.0f, true);

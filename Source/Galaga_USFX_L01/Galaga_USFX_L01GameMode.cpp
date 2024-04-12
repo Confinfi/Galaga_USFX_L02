@@ -35,13 +35,13 @@ FTimerHandle TimerHandle_EliminarNaves;
 FTimerHandle TimerHandle_AgregarNaves;
 
 TArray<TSubclassOf<ANaveEnemiga>> claseNave = { AMyNaveEnemigaCazaG1::StaticClass(), AMyNaveEnemigaCazaG2::StaticClass(), ANaveEnemigaEspiaG1::StaticClass(), ANaveEnemigaEspiaG2::StaticClass(),
-    ANaveEnemigaNodrizaG1::StaticClass(), ANaveEnemigaNodrizaG2::StaticClass(), ANaveEnemigaReabastecimientoG1::StaticClass(), ANaveEnemigaReabastecimientoG2::StaticClass(),
+    ANaveEnemigaNodrizaG1::StaticClass(), ANaveEnemigaNodrizaG2::StaticClass(),ANaveEnemigaReabastecimientoG1::StaticClass(), ANaveEnemigaReabastecimientoG2::StaticClass(),
     ANaveEnemigaTransporteG1::StaticClass(), ANaveEnemigaTransporteG2::StaticClass() };
 
 void AGalaga_USFX_L01GameMode::BeginPlay()
 {
     Super::BeginPlay();
-    FVector ubicacionInicioNAvesEnemigasReabastecimiento = FVector(1000.0f, 500.0f, 200.0f);
+    FVector ubicacionInicioNAvesEnemigasReabastecimiento = FVector(250.0f, 140.0f, 250.0f);
 
 // Verifica si el mundo es válido antes de continuar
     if (GetWorld() != nullptr)
@@ -53,7 +53,7 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
             TSubclassOf<ANaveEnemiga> ClaseRandom = claseNave[FMath::RandRange(0, claseNave.Num() - 1)];
 
             // Calcula la posición de spawn de la nave en función de la posición inicial y un incremento en la dirección Y.
-            FVector SpawnLocation = InicialSpawnLocation + FVector(0.f, i * 50.f, 0.f);
+            FVector SpawnLocation = InicialSpawnLocation + FVector(0.f, i * 40.f, 0.f);
 
             // Define la rotación de spawn como cero.
             FRotator SpawnRotation = FRotator::ZeroRotator;
@@ -86,6 +86,7 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
         //GetWorld()->GetTimerManager().SetTimer(TimerHandle_AgregarNaves, this, &AGalaga_USFX_L01GameMode::CrearNaves, 10.0f, true, 5.0f); // Agrega naves después de 5 segundos del inicio
 
     }
+  /*  ANaveEnemigaNodrizaG1* NaveNodriza = GetWorld()->SpawnActor<ANaveEnemigaNodrizaG1>(ubicacionInicioNAvesEnemigasReabastecimiento, FRotator::ZeroRotator);*/
 }
 //void AGalaga_USFX_L01GameMode::ActualizarInvisibilidadNaves()
 //{

@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\Galaga_USFX_L01Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.obj"
+"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\ComponenteDeInvisibilidad.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Escenario.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Galaga_USFX_L01.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Galaga_USFX_L01GameMode.cpp.obj"
@@ -30,6 +31,7 @@
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\NaveEnemigaTransporteG2.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\PowerBonus.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\ProyectilEnemigo.cpp.obj"
+"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\ComponenteDeInvisibilidad.gen.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Escenario.gen.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Galaga_USFX_L01.init.gen.cpp.obj"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Galaga_USFX_L01GameMode.gen.cpp.obj"

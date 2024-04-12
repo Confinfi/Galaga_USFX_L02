@@ -2,6 +2,8 @@ C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugG
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemigaReabastecimientoG1.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemigaReabastecimiento.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\NaveEnemiga.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\ComponenteDeInvisibilidad.h
+C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\ComponenteDeInvisibilidad.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemiga.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaReabastecimiento.generated.h
 C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaReabastecimientoG1.generated.h

@@ -59,7 +59,7 @@ public: \
 
 
 #define Galaga_USFX_L02_Source_Galaga_USFX_L01_ComponenteDeInvisibilidad_h_13_PRIVATE_PROPERTY_OFFSET
-#define Galaga_USFX_L02_Source_Galaga_USFX_L01_ComponenteDeInvisibilidad_h_10_PROLOG
+#define Galaga_USFX_L02_Source_Galaga_USFX_L01_ComponenteDeInvisibilidad_h_9_PROLOG
 #define Galaga_USFX_L02_Source_Galaga_USFX_L01_ComponenteDeInvisibilidad_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
