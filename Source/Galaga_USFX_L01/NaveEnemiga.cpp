@@ -18,8 +18,11 @@ ANaveEnemiga::ANaveEnemiga()
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
 
+
 	ComponenteInvisibilidad = CreateDefaultSubobject<UComponenteDeInvisibilidad>(TEXT("ComponenteInvisibilidad"));
+
 }
+
 
 // Called when the game starts or when spawned
 void ANaveEnemiga::BeginPlay()
@@ -27,32 +30,14 @@ void ANaveEnemiga::BeginPlay()
 	Super::BeginPlay();
 
 	
+	
 }
 
-//void ANaveEnemiga::ActualizarInvisibilidad()
-//{
-//    // Obtener el game mode
-//    AGalaga_USFX_L01GameMode* GameMode = Cast<AGalaga_USFX_L01GameMode>(GetWorld()->GetAuthGameMode());
-//    if (GameMode)
-//    {
-//        // Decide aleatoriamente si esta nave debe ser invisible
-//        bool DebeSerInvisible = FMath::RandBool();
-//
-//        // Si se decide que la nave debe ser invisible, oculta su malla
-//        if (DebeSerInvisible)
-//        {
-//            mallaNaveEnemiga->SetVisibility(false);
-//        }
-//        else
-//        {
-//            mallaNaveEnemiga->SetVisibility(true);
-//        }
-//    }
-//}
-// Called every frame
+
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
 
 }
 

@@ -14,6 +14,7 @@ class GALAGA_USFX_L01_API ANaveEnemigaTransporteG2 : public ANaveEnemigaTranspor
 private:
 	int cargaDoble;
 	ANaveEnemigaTransporteG2();
+	FString tipoEspia = "TransporteG2";
 	FORCEINLINE int GetCargaDoble() const { return cargaDoble; }
 	FORCEINLINE void SetCargaDoble(int _cargaDoble) { cargaDoble = _cargaDoble; }
 protected:

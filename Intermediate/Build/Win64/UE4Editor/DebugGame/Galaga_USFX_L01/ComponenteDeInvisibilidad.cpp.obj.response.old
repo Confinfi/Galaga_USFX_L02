@@ -259,11 +259,8 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\Galaga_USFX_L01Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Yu"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\Galaga_USFX_L01Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Fp"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\Galaga_USFX_L01Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
 "C:\Users\aguir\Desktop\Galaga_USFX_L02\Source\Galaga_USFX_L01\ComponenteDeInvisibilidad.cpp"
-/FI"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Definitions.Galaga_USFX_L01.h"
+/FI"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\Definitions.h"
 /Fo"C:\Users\aguir\Desktop\Galaga_USFX_L02\Intermediate\Build\Win64\UE4Editor\DebugGame\Galaga_USFX_L01\ComponenteDeInvisibilidad.cpp.obj"
 /TP
 /GR-

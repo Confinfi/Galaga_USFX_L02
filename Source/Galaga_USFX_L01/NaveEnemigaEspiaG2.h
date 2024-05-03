@@ -17,6 +17,7 @@ class GALAGA_USFX_L01_API ANaveEnemigaEspiaG2 : public ANaveEnemigaEspia
 private:
 	int invisibilidadTemp;
 	ANaveEnemigaEspiaG2();
+	FString tipoEspia = "EspiaG2";
 	FORCEINLINE int GetInvisibilidadTemp() const { return invisibilidadTemp; }
 	FORCEINLINE void SetInvisibilidadTemp(int _invisibilidadTemp) { invisibilidadTemp = _invisibilidadTemp; }
 protected:

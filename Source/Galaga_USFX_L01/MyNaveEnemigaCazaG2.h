@@ -16,6 +16,7 @@ class GALAGA_USFX_L01_API AMyNaveEnemigaCazaG2 : public AMyNaveEnemigaCaza
 private:
 	int resistenciaDoble;
 	AMyNaveEnemigaCazaG2();
+	FString tipoEspia = "CazaG2";
 	FORCEINLINE int GetResistenciaDoble() const { return resistenciaDoble; }
 	FORCEINLINE void SetResistenciaDoble(int _resistenciaDoble) { resistenciaDoble = _resistenciaDoble; }
 protected:

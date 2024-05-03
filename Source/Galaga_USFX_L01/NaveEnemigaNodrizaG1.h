@@ -17,6 +17,7 @@ class GALAGA_USFX_L01_API ANaveEnemigaNodrizaG1 : public ANaveEnemigaNodriza
 private:
 	int resistenciaCuadruple;
 	ANaveEnemigaNodrizaG1();
+	FString tipoEspia = "NodrizaG1";
 	FORCEINLINE int GettripleResistenciaCuadruple() const { return resistenciaCuadruple; }
 	FORCEINLINE void SetInvisibilidadTemp(int _resistenciaCuadruple) { resistenciaCuadruple = _resistenciaCuadruple; }
 protected:

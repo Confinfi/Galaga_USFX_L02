@@ -22,7 +22,7 @@ public:
 	FORCEINLINE int GetCampoVision() const { return campoVision; }
 	FORCEINLINE void SetCampoVision(int _campoVision) { campoVision = _campoVision; }
 protected: 
-	virtual void Mover(float Deltatime);
+	virtual void Mover(float Deltatime) ;
 	virtual void Disparar();
 	virtual void Destruirse();
 	virtual void Escapar();

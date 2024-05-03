@@ -16,6 +16,7 @@ private:
 
 public:
 	AMyNaveEnemigaCazaG1();
+	FString tipoEspia = "CazaG1";
 	FORCEINLINE int GetDanoEspecial() const { return danoEspecial; }
 	FORCEINLINE void SetDanoEspecial(int _danoEspecial) { danoEspecial = _danoEspecial; }
 protected:

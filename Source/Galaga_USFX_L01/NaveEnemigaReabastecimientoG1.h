@@ -17,6 +17,7 @@ class GALAGA_USFX_L01_API ANaveEnemigaReabastecimientoG1 : public ANaveEnemigaRe
 private:
 	int regenerarResistencia;
 	ANaveEnemigaReabastecimientoG1();
+	FString tipoEspia = "ReabastecimientoG1";
 	FORCEINLINE int GetRegenerarResistencia() const { return regenerarResistencia; }
 	FORCEINLINE void SetRegenerarResistencia(int _regenerarResistencia) { regenerarResistencia = _regenerarResistencia; }
 protected:

@@ -17,26 +17,18 @@ public:
 	UStaticMeshComponent* mallaNaveEnemiga;
 
 protected:
-	float resistencia; //Numero de disparos que puede recibir antes de ser destruido
+	float resistencia; 
 	float velocidad;
-	float danoProducido; //Potencia de cada proyectil que dispara la anave
+	float dano; 
 	FString nombre;
-	float tiempoDisparo; //Tiempo que debe transcurrir entre cada disparo
 	FVector posicion;
-	int trayectoria; //Cada valor numerico representa a una funcion que la nave debe asumir para moverse
-	int capacidadPasajeros; //Numero de naves que puede transportar
-	int capacidadMunicion; //Numero de disparos que puede realizar antes de recargar
-	int tipoNave; //Cada valor numerico representa a un tipo de nave enemiga
+	int tipoNave; 
 	float experiencia;
-	float energia;
-
-	float peso;
-	float volumen;
-
 
 public:
 	// Sets default values for this actor's properties
 	ANaveEnemiga();
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -53,7 +45,6 @@ protected:
 	void Destruirse() PURE_VIRTUAL(ANaveEnemiga::Destruirse, );
 	void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
 	//pruebas
-
 	UComponenteDeInvisibilidad* ComponenteInvisibilidad;
 	FTimerHandle Timerhandle_Visibilidad;
 };

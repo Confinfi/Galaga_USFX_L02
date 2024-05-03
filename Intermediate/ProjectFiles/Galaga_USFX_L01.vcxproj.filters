@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_L01.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{5818D265-2624-43EA-A77D-647DBE7261C4}</UniqueIdentifier>
+      <UniqueIdentifier>{3929C411-7C45-41A1-B22B-5949FA70E1E8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_L01.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{18CFFFF7-C2AE-4E10-9B03-CB687B8AD04E}</UniqueIdentifier>
+      <UniqueIdentifier>{7208A438-511D-4DC0-A044-4834A7573EF8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_L01">
-      <UniqueIdentifier>{4BBCB7F7-8B49-4EE1-AD14-4BDA06394B54}</UniqueIdentifier>
+      <UniqueIdentifier>{0FF79A28-E462-4F1B-8BA0-D6580A666ADE}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX_L01\ComponenteDeInvisibilidad.cpp">
       <Filter>Source\Galaga_USFX_L01</Filter>
@@ -40,10 +40,22 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_L01\ComponenteDeInvisibilidad.h">
       <Filter>Source\Galaga_USFX_L01</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L01\ComponenteDeMovimiento.cpp">
+      <Filter>Source\Galaga_USFX_L01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L01\ComponenteDeMovimiento.h">
+      <Filter>Source\Galaga_USFX_L01</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L01\Escenario.cpp">
       <Filter>Source\Galaga_USFX_L01</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L01\Escenario.h">
+      <Filter>Source\Galaga_USFX_L01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L01\Fabrica.cpp">
+      <Filter>Source\Galaga_USFX_L01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L01\Fabrica.h">
       <Filter>Source\Galaga_USFX_L01</Filter>
     </ClInclude>
     <None Include="..\..\Source\Galaga_USFX_L01\Galaga_USFX_L01.Build.cs">

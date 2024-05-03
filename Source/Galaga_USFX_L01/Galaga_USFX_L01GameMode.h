@@ -31,21 +31,15 @@ class AGalaga_USFX_L01GameMode : public AGameModeBase
 public:
 	AGalaga_USFX_L01GameMode();
 
-public:
-
 
 protected:
 	//Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 public:
-	TArray<ANaveEnemiga*> TANavesEnemigas;
-	UPROPERTY()
-	TMap<FString, FVector> TMPosicionesNavesEnemigas;
-	virtual void Tick(float DeltaTime) override;
 
-	void MostrarMensajesEnPantalla();
-	void EliminarNaves();
-	void CrearNaves();
-	//void ActualizarInvisibilidadNaves();
+	virtual void Tick(float DeltaTime) override;
+public:
+	TArray<ANaveEnemiga*> TANavesEnemigas;
+
 	
 };

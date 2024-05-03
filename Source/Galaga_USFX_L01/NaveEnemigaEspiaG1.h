@@ -17,6 +17,7 @@ class GALAGA_USFX_L01_API ANaveEnemigaEspiaG1 : public ANaveEnemigaEspia
 private:
 	int mayorVelocidad;
 	ANaveEnemigaEspiaG1();
+	FString tipoEspia = "EspiaG1";
 	FORCEINLINE int GetMayorVelocidad() const { return mayorVelocidad; }
 	FORCEINLINE void SetMayorVelocidad(int _mayorVelocidad) { mayorVelocidad = _mayorVelocidad; }
 protected:
